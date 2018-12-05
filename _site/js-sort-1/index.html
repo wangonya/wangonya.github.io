@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sorting Algorithms with Javascript (Part 1) - Kinyanjui Wangonya</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Kinyanjui Wangonya" property="og:site_name">
+  
+    <meta content="Sorting Algorithms with Javascript (Part 1)" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Sorting Algorithms with Javascript - Part 1 (Merge sort, Insertion sort & Bubble sort)" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/js-sort-1/" property="og:url">
+  
+  
+    <meta content="2018-10-18T00:00:00+03:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sort1.jpg" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="javascript" property="article:tag">
+    
+    <meta content="algorithms" property="article:tag">
+    
+    <meta content="programming" property="article:tag">
+    
+    <meta content="computerscience" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@wang0nya">
+  
+    <meta name="twitter:title" content="Sorting Algorithms with Javascript (Part 1)">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/js-sort-1/">
+  
+  
+    <meta name="twitter:description" content="Sorting Algorithms with Javascript - Part 1 (Merge sort, Insertion sort & Bubble sort)">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sort1.jpg">
+  
+
+	<meta name="description" content="Sorting Algorithms with Javascript - Part 1 (Merge sort, Insertion sort & Bubble sort)">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Sorting Algorithms with Javascript (Part 1) | Kinyanjui Wangonya</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sorting Algorithms with Javascript (Part 1)" />
+<meta name="author" content="Kinyanjui Wangonya" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sorting Algorithms with Javascript - Part 1 (Merge sort, Insertion sort &amp; Bubble sort)" />
+<meta property="og:description" content="Sorting Algorithms with Javascript - Part 1 (Merge sort, Insertion sort &amp; Bubble sort)" />
+<link rel="canonical" href="http://localhost:4000/js-sort-1/" />
+<meta property="og:url" content="http://localhost:4000/js-sort-1/" />
+<meta property="og:site_name" content="Kinyanjui Wangonya" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-18T00:00:00+03:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/js-sort-1/","headline":"Sorting Algorithms with Javascript (Part 1)","dateModified":"2018-10-18T00:00:00+03:00","datePublished":"2018-10-18T00:00:00+03:00","author":{"@type":"Person","name":"Kinyanjui Wangonya"},"description":"Sorting Algorithms with Javascript - Part 1 (Merge sort, Insertion sort &amp; Bubble sort)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/js-sort-1/"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/me.jpg" alt="Kinyanjui Wangonya"></a>
+      </div>
+      <div class="author-name">Kinyanjui Wangonya</div>
+      <p>👨🏾‍💻</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+        <li class="twitter"><a href="http://twitter.com/wang0nya" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/wangonya" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/wangonya" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:kwangonya@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2018 &copy; Kinyanjui Wangonya</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/sort1.jpg alt="Sorting Algorithms with Javascript (Part 1)">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Sorting Algorithms with Javascript (Part 1)</h1>
+        <div class="page-date"><span>2018, Oct 18&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>I’ve been learning a lot about data structures and algorithms lately and I’ve noticed in my reading that there aren’t a lot of examples showing implementations of algorithms in Javascript. You’ll mostly find examples in Java, Python, C, C++ etc. Maybe there’s a reason for preferring these languages over Javascript? I’m not sure.</p>
+
+<p>In this first part, I’m going to show Javascript implementations of three sorting algorithms:</p>
+<ul>
+  <li>Merge sort</li>
+  <li>Insertion sort</li>
+  <li>Bubble sort</li>
+</ul>
+
+<p>This is not intended to be an in-depth explanation on the ins and outs of how the algorithms work and their performance. If you’d rather read about that, here’s a nice resource I found: <a href="https://brilliant.org/wiki/sorting-algorithms/">Sorting Algorithms</a></p>
+
+<p>To keep things simple, I’ll be sorting a simple list <code class="highlighter-rouge">list</code> having only 5 elements <code class="highlighter-rouge">[4, 2, 3, 1, 5]</code>.</p>
+
+<h2 id="merge-sort">Merge Sort</h2>
+<p>Merge sort uses a divide-and-conquer approach to sort elements in an array. Basically, what this means is that instead of dealing with the array as a whole, it continually splits it in half until both halves are sorted, then the halves are merged into one solved list.</p>
+
+<h4 id="visual">Visual</h4>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/1npt37z4g0zjxiicljlm.gif" alt="merge-sort" /></p>
+
+<h4 id="code">Code</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span>
+  <span class="c1">// an array of length == 1 is technically a sorted list</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">len</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">list</span>
+  <span class="p">}</span>
+
+  <span class="c1">// get mid item</span>
+  <span class="kd">const</span> <span class="nx">middleIndex</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+  <span class="c1">// split current list into two: left and right list</span>
+  <span class="kd">let</span> <span class="nx">leftList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">middleIndex</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">rightList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">middleIndex</span><span class="p">,</span> <span class="nx">len</span><span class="p">)</span>
+
+  <span class="nx">leftList</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">leftList</span><span class="p">)</span>
+  <span class="nx">rightList</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">rightList</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">leftList</span><span class="p">,</span> <span class="nx">rightList</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Solve the sub-problems and merge them together</span>
+<span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">leftList</span><span class="p">,</span> <span class="nx">rightList</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">leftList</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">rightList</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">leftItem</span> <span class="o">=</span> <span class="nx">leftList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="kd">const</span> <span class="nx">rightItem</span> <span class="o">=</span> <span class="nx">rightList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">leftItem</span> <span class="o">&gt;</span> <span class="nx">rightItem</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">rightItem</span><span class="p">)</span>
+      <span class="nx">rightList</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">leftItem</span><span class="p">);</span>
+      <span class="nx">leftList</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// if left list has items, add what is left to the results</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">leftList</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">leftList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nx">leftList</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="c1">// if right list has items, add what is left to the results</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">rightList</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">rightList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nx">rightList</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="c1">// merge the left and right list</span>
+  <span class="k">return</span> <span class="nx">sorted</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sorted</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="insertion-sort">Insertion Sort</h2>
+<p>Insertion sort builds the final sorted list one element at a time. It does this by taking one element, comparing it to the rest of elements in the list, finding its right position, and then placing it there.</p>
+
+<p>This is known as comparison-based sorting.</p>
+
+<h4 id="visual-1">Visual</h4>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/g01s69r1ppo9kifien2v.gif" alt="insertion-sort" /></p>
+
+<h4 id="code-1">Code</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">insertionSort</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+    <span class="p">{</span>
+      <span class="c1">// move current element to the first position</span>
+      <span class="nx">list</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">}</span> 
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> 
+    <span class="p">{</span>
+      <span class="c1">// maintain element position</span>
+      <span class="k">continue</span>
+    <span class="p">}</span> 
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// find where element should go</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> 
+        <span class="p">{</span>
+          <span class="c1">// move element</span>
+          <span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">list</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">insertionSort</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sorted</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="bubble-sort">Bubble Sort</h2>
+<p>Another example of a comparison-based sorting algorithm, Bubble sort compares <em>each pair</em> of elements in a list and swaps them if they are out of order until the list is sorted.</p>
+
+<h4 id="visual-2">Visual</h4>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/m4zwhvxf6ujdrvt9xoq5.gif" alt="bubble-sort" /></p>
+
+<h4 id="code-2">Code</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">bubbleSort</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">swapped</span>
+    <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="nx">swapped</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// compare pairs of elements</span>
+            <span class="c1">// if left element &gt; right element, swap</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">{</span>
+               <span class="kd">const</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+               <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+               <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span>
+               <span class="nx">swapped</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span> 
+  <span class="c1">// continue swapping until sorted</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">swapped</span><span class="p">)</span> 
+    
+  <span class="k">return</span> <span class="nx">list</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">bubbleSort</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sorted</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Thats it! 😊 And, incase you’re wondering, I used <a href="https://visualgo.net/en/sorting">this</a> site to make the visuals.</p>
+
+<p>In the next part, I’ll be going through:</p>
+<ul>
+  <li>Quick sort</li>
+  <li>Heap sort</li>
+  <li>Counting sort</li>
+</ul>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Sorting Algorithms with Javascript (Part 1)&url=http://localhost:4000/js-sort-1/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/js-sort-1/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/js-sort-1/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#javascript" class="tag">&#35; javascript</a>
+          
+            <a href="/tags#algorithms" class="tag">&#35; algorithms</a>
+          
+            <a href="/tags#programming" class="tag">&#35; programming</a>
+          
+            <a href="/tags#computerscience" class="tag">&#35; computerscience</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-122307986-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

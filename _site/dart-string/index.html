@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How you turn a string into a number (or vice versa) with Dart - Kinyanjui Wangonya</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Kinyanjui Wangonya" property="og:site_name">
+  
+    <meta content="How you turn a string into a number (or vice versa) with Dart" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="How you turn a string into a number with Dart" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/dart-string/" property="og:url">
+  
+  
+    <meta content="2018-10-04T00:00:00+03:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/dart.jpg" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="dart" property="article:tag">
+    
+    <meta content="learning" property="article:tag">
+    
+    <meta content="beginners" property="article:tag">
+    
+    <meta content="webdev" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@wang0nya">
+  
+    <meta name="twitter:title" content="How you turn a string into a number (or vice versa) with Dart">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/dart-string/">
+  
+  
+    <meta name="twitter:description" content="How you turn a string into a number with Dart">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/dart.jpg">
+  
+
+	<meta name="description" content="How you turn a string into a number with Dart">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>How you turn a string into a number (or vice versa) with Dart | Kinyanjui Wangonya</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="How you turn a string into a number (or vice versa) with Dart" />
+<meta name="author" content="Kinyanjui Wangonya" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How you turn a string into a number with Dart" />
+<meta property="og:description" content="How you turn a string into a number with Dart" />
+<link rel="canonical" href="http://localhost:4000/dart-string/" />
+<meta property="og:url" content="http://localhost:4000/dart-string/" />
+<meta property="og:site_name" content="Kinyanjui Wangonya" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-04T00:00:00+03:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/dart-string/","headline":"How you turn a string into a number (or vice versa) with Dart","dateModified":"2018-10-04T00:00:00+03:00","datePublished":"2018-10-04T00:00:00+03:00","author":{"@type":"Person","name":"Kinyanjui Wangonya"},"description":"How you turn a string into a number with Dart","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dart-string/"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/me.jpg" alt="Kinyanjui Wangonya"></a>
+      </div>
+      <div class="author-name">Kinyanjui Wangonya</div>
+      <p>👨🏾‍💻</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+        <li class="twitter"><a href="http://twitter.com/wang0nya" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/wangonya" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/wangonya" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:kwangonya@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2018 &copy; Kinyanjui Wangonya</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/dart.jpg alt="How you turn a string into a number (or vice versa) with Dart">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How you turn a string into a number (or vice versa) with Dart</h1>
+        <div class="page-date"><span>2018, Oct 04&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>When you’re so used to one language and you’re trying to learn a new one, its likely that you’ll find yourself always looking back to what you already know to find out if the new language matches up. I know I do. If I find similarities, I’m happy 🙂. If I find more features, I’m excited 😄. If the new language is lacking, I’m like, how come something so important (however trivial the thing may be) is missing 🤨 I can’t work with this.</p>
+
+<p>Say I needed to turn a string into a number with Javascript, there’s a number of ways I could do it:</p>
+<ul>
+  <li>using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt"><code class="highlighter-rouge">parseInt()</code></a></li>
+  <li>using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat"><code class="highlighter-rouge">parseFloat()</code></a></li>
+  <li>using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"><code class="highlighter-rouge">Number()</code></a></li>
+</ul>
+
+<p>Dart has almost similar functions to achieve the same results.</p>
+
+<h3 id="turning-a-string-into-a-number-or-vice-versa-with-dart">Turning a string into a number (or vice versa) with Dart</h3>
+
+<p>You can try out the code snippets on <a href="https://dartpad.dartlang.org/">dartpad</a></p>
+
+<h4 id="string-to-int">String to int</h4>
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// String -&gt; int</span>
+<span class="n">main</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="kd">var</span> <span class="n">one</span> <span class="o">=</span> <span class="kt">int</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">'1'</span><span class="o">);</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">one</span> <span class="o">==</span> <span class="mi">1</span><span class="o">);</span> <span class="c1">// prints true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="string-to-double">String to double</h4>
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// String -&gt; double</span>
+<span class="n">main</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="kd">var</span> <span class="n">onePointOne</span> <span class="o">=</span> <span class="kt">double</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">'1.1'</span><span class="o">);</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">onePointOne</span> <span class="o">==</span> <span class="mf">1.1</span><span class="o">);</span> <span class="c1">// prints true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="int-to-string">int to String</h4>
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// int -&gt; String</span>
+<span class="n">main</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="kt">String</span> <span class="n">oneAsString</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">oneAsString</span> <span class="o">==</span> <span class="s">'1'</span><span class="o">);</span> <span class="c1">// prints true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="double-to-string">double to String</h4>
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// double -&gt; String</span>
+<span class="n">main</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="kt">String</span> <span class="n">piAsString</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="o">.</span><span class="na">toStringAsFixed</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">piAsString</span> <span class="o">==</span> <span class="s">'3.14'</span><span class="o">);</span> <span class="c1">// prints true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>I’ve been wanting to take up mobile app development with flutter so I thought I’d get comfortable with dart first before diving into flutter. 
+So far, I’m happy. Coming from Javascript, Dart is easy to pick up, and fun to learn.</p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How you turn a string into a number (or vice versa) with Dart&url=http://localhost:4000/dart-string/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/dart-string/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/dart-string/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#dart" class="tag">&#35; dart</a>
+          
+            <a href="/tags#learning" class="tag">&#35; learning</a>
+          
+            <a href="/tags#beginners" class="tag">&#35; beginners</a>
+          
+            <a href="/tags#webdev" class="tag">&#35; webdev</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-122307986-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
