@@ -17,10 +17,10 @@ social-linkedin: wangonya # add your Linkedin handle
 social-email: kwangonya@gmail.com # add your Email address
 
 # Disqus
-# discus-identifier: wang0nya # add your discus identifier
+discus-identifier: wangonya # add your discus identifier
 
 # Tracker
-analytics: UA-122307986-1 # Google Analytics
+#analytics: UA-122307986-1 # Google Analytics
 
 # Build Settings
 markdown: kramdown
